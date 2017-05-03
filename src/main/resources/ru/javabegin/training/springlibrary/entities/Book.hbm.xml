@@ -10,10 +10,27 @@
         <property name="content" column="content"/>
         <property name="pageCount" column="page_count"/>
         <property name="isbn" column="isbn"/>
-        <property name="genreId" column="genre_id"/>
-        <property name="authorId" column="author_id"/>
+
+        <!--<property name="genreId" column="genre_id"/>-->
+        <many-to-one class="ru.javabegin.training.springlibrary.entities.Genre"
+                     fetch="join" name="genre" lazy="false">
+            <column name="genre_id" />
+        </many-to-one>
+
+        <!--<property name="authorId" column="author_id"/>-->
+        <many-to-one class="ru.javabegin.training.springlibrary.entities.Author"
+                     fetch="join" name="author" lazy="false">
+            <column name="author_id" />
+        </many-to-one>
+
         <property name="publishYear" column="publish_year"/>
-        <property name="publisherId" column="publisher_id"/>
+
+        <!--<property name="publisherId" column="publisher_id"/>-->
+        <many-to-one class="ru.javabegin.training.springlibrary.entities.Publisher"
+                     fetch="join" name="publisher" lazy="false">
+            <column name="publisher_id" />
+        </many-to-one>
+
         <property name="image" column="image"/>
         <property name="descr" column="descr"/>
     </class>
