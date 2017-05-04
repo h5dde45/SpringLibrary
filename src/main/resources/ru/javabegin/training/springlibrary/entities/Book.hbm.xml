@@ -33,5 +33,8 @@
 
         <property name="image" column="image"/>
         <property name="descr" column="descr"/>
+
+        <property name="rating" column="rating"/>
+        <property name="voteCount" column="vote_count"/>
     </class>
 </hibernate-mapping>

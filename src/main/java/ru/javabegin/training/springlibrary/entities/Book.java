@@ -16,6 +16,8 @@ public class Book implements java.io.Serializable {
     private Integer publishYear;
     private byte[] image;
     private String descr;
+    private Integer rating;
+    private Long voteCount;
 
     public Book() {
     }
@@ -121,6 +123,22 @@ public class Book implements java.io.Serializable {
 
     public void setDescr(String descr) {
         this.descr = descr;
+    }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public Long getVoteCount() {
+        return voteCount;
+    }
+
+    public void setVoteCount(Long voteCount) {
+        this.voteCount = voteCount;
     }
 
     @Override
