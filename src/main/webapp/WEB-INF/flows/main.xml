@@ -4,6 +4,9 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 
     <view-state id="main">
+        <transition on="searchByLetter">
+            <evaluate expression="libraryFacade.searchBooksByLetter()"/>
+        </transition>
 
     </view-state>
 </flow>
