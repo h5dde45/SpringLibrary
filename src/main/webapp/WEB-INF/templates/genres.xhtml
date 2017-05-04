@@ -16,9 +16,11 @@
                     <ul>
                         <ui:repeat value="${genreDAOImpl.genres}" var="g">
                             <li>
-                                <p:commandLink value="${g.name}" action="searchByGenre"
+                                <p:commandButton value="${g.name}" action="searchByGenre"
                                 actionListener="#{searchCriteria.setGenre(g)}"
-                                ajax="false"/>
+                                styleClass="noborder-button-genre">
+                                    <p:ajax execute="@form" render=":booksForm :booksList"/>
+                                </p:commandButton>
                             </li>
                         </ui:repeat>
                     </ul>
