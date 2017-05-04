@@ -5,6 +5,13 @@ public class Author {
     private String fio;
     private String birthday;
 
+    public Author() {
+    }
+
+    public Author(String fio) {
+        this.fio = fio;
+    }
+
     public long getId() {
         return id;
     }

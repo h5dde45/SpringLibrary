@@ -20,20 +20,22 @@
                 <input type="submit" class="button-text"></input>
 
 
-                <h:inputText  id="search_string" styleClass="search-text"/>
+                <h:inputText  id="search_string" styleClass="search-text"
+                              value="#{searchCriteria.text}"/>
 
-                <p:commandButton id="btnSearch" value="#{msg.search}" styleClass="button" />
-
+                <p:commandButton id="btnSearch" value="#{msg.search}" styleClass="button"
+                                 action="searchByText"/>
 
                 <div class="dropdown">
                     <h:selectOneMenu id="search_select" styleClass="select_search"
-                    value="#{utils.selectSearchType}">
+                    value="#{searchCriteria.searchType}">
                         <f:selectItems value="${utils.searchTypeList}"/>
                     </h:selectOneMenu>
                 </div>
 
                 <script language="javascript">
-                    document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_book}");
+                    document.getElementById("search_form:search_string").
+                    setAttribute("placeholder","#{msg.search_book}");
                 </script>
 
             </h:form>
