@@ -18,6 +18,8 @@ public class LibraryFacade {
     @Autowired
     private BookDAO bookDAO;
 
+    private static final String FIELD_CONTENT = "content";
+
     @Autowired
     private SearchCriteria searchCriteria;
 
@@ -50,6 +52,9 @@ public class LibraryFacade {
                 break;
         }
 
+    }
+    public byte[] getContent(long id){
+        return (byte[])bookDAO.getFieldValue(id, FIELD_CONTENT);
     }
 
 
